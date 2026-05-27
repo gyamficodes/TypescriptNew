@@ -14,9 +14,55 @@ console.log(age);
 
 
 //TypeScript Explicit Types and Inference
-
-let name1: string = "Alice";
+const  name1: string = "Alice";
 console.log(name1); // Alice
 
-let logedIn: boolean = false;
+
+const logedIn: boolean = false;
 console.log(logedIn); // false
+
+const scores: (number | string)[] = [85, 90, 78, "Hello"];
+console.log(scores); // array
+
+function greetMe(name: string) {
+  console.log(`Good morning ${name}` )
+};
+
+greetMe('John');
+
+
+//Type Inference
+let userName = "John Gyamfi";
+
+
+// Type Safety in Action
+// One of TypeScript's main benefits is catching type-related errors during development.
+// Let's look at how TypeScript helps prevent common mistakes
+
+let userName1: string = "Alice";
+console .log(userName1);
+
+
+// JavaScript Behavior
+// This is valid JavaScript but can lead to bugs
+// function add(a, b) {
+// return a + b;
+// }
+
+// console.log(add("5", 3)); // Returns "53" (string concatenation) 
+
+
+// When TypeScript Can't Infer Types
+const data = JSON.parse('{ "name": "Alice", "age": 30 }');
+console.log(data);
+
+
+//any and unknown 
+let page: any = "1";
+page = 1;
+
+
+
+
+
+
