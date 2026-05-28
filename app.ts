@@ -62,6 +62,58 @@ let page: any = "1";
 page = 1;
 
 
+// TypeScript Arrays
+const list:string[] = [];
+list.push("John");
+
+
+// TypeScript Tuples
+let fruit: readonly [string, number, number] = ["Apple", 5,2];
+console.log(fruit); // ["Apple", 5]
+
+
+//TypeScript Object Types
+const car: {type: string, model:string, year: number} = {
+     type: "Toyota",
+    model: "Corolla",
+  year: 2009
+}
+
+// TypeScript Enums
+// An enum is a special "class" that represents a group of constants (unchangeable variables).
+// Enums come in two flavors string and numeric.
+
+// Let's start with numeric.
+enum CardinalDirections {
+  North,
+  East,
+  South,
+  West
+};
+
+console.log(CardinalDirections.North); // 0
+
+
+// TypeScript Type Aliases and Interfaces
+type useerAge = number;
+type userName = string;
+type userInfo = string | boolean;
+
+type  cars = {
+   Age : useerAge,
+   Name: userName,
+   Info:  userInfo
+}
+
+let car1: cars = {
+  Age: 2026,
+  Name: "Lexus",
+  Info: "Good Car"
+}
+
+console.log(car1);
+
+
 
 
 
