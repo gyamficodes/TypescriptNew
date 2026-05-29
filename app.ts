@@ -99,7 +99,7 @@ type useerAge = number;
 type userName = string;
 type userInfo = string | boolean;
 
-type  cars = {
+type cars = {
    Age : useerAge,
    Name: userName,
    Info:  userInfo
@@ -114,7 +114,102 @@ let car1: cars = {
 console.log(car1);
 
 
+type myApp = {
+  Name: string,
+  Year: number
+}
+
+
+let App1 : myApp = {
+  Name: "Search",
+   Year: 2026
+}
+
+console.log(App1);
+
+
+// Interfaces
+// Interfaces are similar to type aliases, except they only apply to object types.
+interface Rectangle {
+   height: number,
+  width: number
+}
+
+const myRectangle: Rectangle = {
+  height: 10,
+  width: 20
+};
 
 
 
+// Extending Interfaces
+// Interfaces can extend each other's definition.
+// Extending an interface means you are creating a new interface with the same properties as the original, plus something new.
+interface ColoredRectangle extends Rectangle {
+  color : string;
+}
 
+const myColorRectangle: ColoredRectangle = {
+  height: 10,
+  width: 20,
+  color: "red"
+};
+
+console.log(myColorRectangle);
+
+
+// TypeScript Union Types
+// Union types are used when a value can be more than a single type.
+
+const myProperty = (propertys: string | number ) => {
+     console.log(`my property is ${propertys}`)
+}
+
+myProperty("Phone");
+myProperty(10);
+
+// TypeScript Functions
+function getTime(): number {
+  return new Date().getTime()
+}
+
+getTime()
+
+// Void Return Type
+// The type void can be used to indicate a function doesn't return any value.
+function printHello(): void {
+  console.log("Hello");
+}
+printHello();
+
+
+// Parameters
+// Function parameters are typed with a similar syntax as variable declarations.
+
+const multiply = (a:number, b:number) => {
+  console.log(a * b)
+};
+
+multiply(10, 2);
+
+
+// Named Parameters
+// Typing named parameters follows the same pattern as typing normal parameters.
+
+function divide({ dividend, divisor }: { dividend: number, divisor: number }) {
+  return dividend / divisor;
+}
+
+
+// Type Alias
+// Function types can be specified separately from functions with type aliases.
+// These types are written similarly to arrow functions, read more about arrow functions here.
+
+type Nagate = (value: number) => number;
+
+const nagateFunction: Nagate = (value) => value + 3;
+nagateFunction(1)
+
+
+// TypeScript Casting
+// Casting is the process of overriding a type.

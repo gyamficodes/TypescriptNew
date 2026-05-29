@@ -72,3 +72,51 @@ let car1 = {
     Info: "Good Car"
 };
 console.log(car1);
+let App1 = {
+    Name: "Search",
+    Year: 2026
+};
+console.log(App1);
+const myRectangle = {
+    height: 10,
+    width: 20
+};
+const myColorRectangle = {
+    height: 10,
+    width: 20,
+    color: "red"
+};
+console.log(myColorRectangle);
+// TypeScript Union Types
+// Union types are used when a value can be more than a single type.
+const myProperty = (propertys) => {
+    console.log(`my property is ${propertys}`);
+};
+myProperty("Phone");
+myProperty(10);
+// TypeScript Functions
+function getTime() {
+    return new Date().getTime();
+}
+getTime();
+// Void Return Type
+// The type void can be used to indicate a function doesn't return any value.
+function printHello() {
+    console.log("Hello");
+}
+printHello();
+// Parameters
+// Function parameters are typed with a similar syntax as variable declarations.
+const multiply = (a, b) => {
+    console.log(a * b);
+};
+multiply(10, 2);
+// Named Parameters
+// Typing named parameters follows the same pattern as typing normal parameters.
+function divide({ dividend, divisor }) {
+    return dividend / divisor;
+}
+const nagateFunction = (value) => value + 3;
+nagateFunction(1);
+// TypeScript Casting
+// Casting is the process of overriding a type.
