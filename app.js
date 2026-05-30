@@ -120,3 +120,9 @@ const nagateFunction = (value) => value + 3;
 nagateFunction(1);
 // TypeScript Casting
 // Casting is the process of overriding a type.
+let x = 1;
+console.log(x);
+// Casting with <>
+// Using <> works the same as casting with as. 
+let num1 = 10;
+console.log(num1);

@@ -204,12 +204,18 @@ function divide({ dividend, divisor }: { dividend: number, divisor: number }) {
 // Type Alias
 // Function types can be specified separately from functions with type aliases.
 // These types are written similarly to arrow functions, read more about arrow functions here.
-
 type Nagate = (value: number) => number;
-
 const nagateFunction: Nagate = (value) => value + 3;
 nagateFunction(1)
 
 
 // TypeScript Casting
 // Casting is the process of overriding a type.
+let  x: unknown = 1;
+console.log(x as number);
+
+
+// Casting with <>
+// Using <> works the same as casting with as. 
+let num1: unknown = 10;
+console.log(<string>num1)
