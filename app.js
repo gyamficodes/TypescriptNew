@@ -20,8 +20,7 @@ console.log(scores); // array
 function greetMe(name) {
     console.log(`Good morning ${name}`);
 }
-;
-greetMe('John');
+greetMe("John");
 //Type Inference
 let userName = "John Gyamfi";
 // Type Safety in Action
@@ -34,11 +33,11 @@ console.log(userName1);
 // function add(a, b) {
 // return a + b;
 // }
-// console.log(add("5", 3)); // Returns "53" (string concatenation) 
+// console.log(add("5", 3)); // Returns "53" (string concatenation)
 // When TypeScript Can't Infer Types
 const data = JSON.parse('{ "name": "Alice", "age": 30 }');
 console.log(data);
-//any and unknown 
+//any and unknown
 let page = "1";
 page = 1;
 // TypeScript Arrays
@@ -51,7 +50,7 @@ console.log(fruit); // ["Apple", 5]
 const car = {
     type: "Toyota",
     model: "Corolla",
-    year: 2009
+    year: 2009,
 };
 // TypeScript Enums
 // An enum is a special "class" that represents a group of constants (unchangeable variables).
@@ -64,27 +63,26 @@ var CardinalDirections;
     CardinalDirections[CardinalDirections["South"] = 2] = "South";
     CardinalDirections[CardinalDirections["West"] = 3] = "West";
 })(CardinalDirections || (CardinalDirections = {}));
-;
 console.log(CardinalDirections.North); // 0
 let car1 = {
     Age: 2026,
     Name: "Lexus",
-    Info: "Good Car"
+    Info: "Good Car",
 };
 console.log(car1);
 let App1 = {
     Name: "Search",
-    Year: 2026
+    Year: 2026,
 };
 console.log(App1);
 const myRectangle = {
     height: 10,
-    width: 20
+    width: 20,
 };
 const myColorRectangle = {
     height: 10,
     width: 20,
-    color: "red"
+    color: "red",
 };
 console.log(myColorRectangle);
 // TypeScript Union Types
@@ -123,6 +121,45 @@ nagateFunction(1);
 let x = 1;
 console.log(x);
 // Casting with <>
-// Using <> works the same as casting with as. 
+// Using <> works the same as casting with as.
 let num1 = 10;
 console.log(num1);
+// TypeScript Classes
+class Pesrson {
+    constructor(name, age) {
+        ((this.name = name), (this.age = age));
+    }
+}
+let person1 = new Pesrson("Kwame", 25);
+console.log(person1);
+// Readonly
+class Animals {
+    constructor(name) {
+        this.name = name;
+        this.name = name;
+    }
+    getName() {
+        return this.name;
+    }
+}
+const animal = new Animals("Goat");
+console.log("Animal Name", animal.getName());
+class Triangles {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    getCircum() {
+        return this.width * this.height;
+    }
+}
+let Tri = new Triangles(20, 10);
+console.log(Tri.getCircum());
+class Circumfrence extends Triangles {
+    constructor(width, height) {
+        super(width, height);
+    }
+    getData() {
+        return this.width + this.height;
+    }
+}

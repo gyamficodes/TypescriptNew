@@ -12,11 +12,9 @@ let bigIntValue: bigint = 9007199254740991n;
 console.log(isActive); // true
 console.log(age);
 
-
 //TypeScript Explicit Types and Inference
-const  name1: string = "Alice";
+const name1: string = "Alice";
 console.log(name1); // Alice
-
 
 const logedIn: boolean = false;
 console.log(logedIn); // false
@@ -25,23 +23,20 @@ const scores: (number | string)[] = [85, 90, 78, "Hello"];
 console.log(scores); // array
 
 function greetMe(name: string) {
-  console.log(`Good morning ${name}` )
-};
+  console.log(`Good morning ${name}`);
+}
 
-greetMe('John');
-
+greetMe("John");
 
 //Type Inference
 let userName = "John Gyamfi";
-
 
 // Type Safety in Action
 // One of TypeScript's main benefits is catching type-related errors during development.
 // Let's look at how TypeScript helps prevent common mistakes
 
 let userName1: string = "Alice";
-console .log(userName1);
-
+console.log(userName1);
 
 // JavaScript Behavior
 // This is valid JavaScript but can lead to bugs
@@ -49,35 +44,30 @@ console .log(userName1);
 // return a + b;
 // }
 
-// console.log(add("5", 3)); // Returns "53" (string concatenation) 
-
+// console.log(add("5", 3)); // Returns "53" (string concatenation)
 
 // When TypeScript Can't Infer Types
 const data = JSON.parse('{ "name": "Alice", "age": 30 }');
 console.log(data);
 
-
-//any and unknown 
+//any and unknown
 let page: any = "1";
 page = 1;
 
-
 // TypeScript Arrays
-const list:string[] = [];
+const list: string[] = [];
 list.push("John");
 
-
 // TypeScript Tuples
-let fruit: readonly [string, number, number] = ["Apple", 5,2];
+let fruit: readonly [string, number, number] = ["Apple", 5, 2];
 console.log(fruit); // ["Apple", 5]
 
-
 //TypeScript Object Types
-const car: {type: string, model:string, year: number} = {
-     type: "Toyota",
-    model: "Corolla",
-  year: 2009
-}
+const car: { type: string; model: string; year: number } = {
+  type: "Toyota",
+  model: "Corolla",
+  year: 2009,
+};
 
 // TypeScript Enums
 // An enum is a special "class" that represents a group of constants (unchangeable variables).
@@ -88,11 +78,10 @@ enum CardinalDirections {
   North,
   East,
   South,
-  West
-};
+  West,
+}
 
 console.log(CardinalDirections.North); // 0
-
 
 // TypeScript Type Aliases and Interfaces
 type useerAge = number;
@@ -100,80 +89,74 @@ type userName = string;
 type userInfo = string | boolean;
 
 type cars = {
-   Age : useerAge,
-   Name: userName,
-   Info:  userInfo
-}
+  Age: useerAge;
+  Name: userName;
+  Info: userInfo;
+};
 
 let car1: cars = {
   Age: 2026,
   Name: "Lexus",
-  Info: "Good Car"
-}
+  Info: "Good Car",
+};
 
 console.log(car1);
 
-
 type myApp = {
-  Name: string,
-  Year: number
-}
+  Name: string;
+  Year: number;
+};
 
-
-let App1 : myApp = {
+let App1: myApp = {
   Name: "Search",
-   Year: 2026
-}
+  Year: 2026,
+};
 
 console.log(App1);
-
 
 // Interfaces
 // Interfaces are similar to type aliases, except they only apply to object types.
 interface Rectangle {
-   height: number,
-  width: number
+  height: number;
+  width: number;
 }
 
 const myRectangle: Rectangle = {
   height: 10,
-  width: 20
+  width: 20,
 };
-
-
 
 // Extending Interfaces
 // Interfaces can extend each other's definition.
 // Extending an interface means you are creating a new interface with the same properties as the original, plus something new.
 interface ColoredRectangle extends Rectangle {
-  color : string;
+  color: string;
 }
 
 const myColorRectangle: ColoredRectangle = {
   height: 10,
   width: 20,
-  color: "red"
+  color: "red",
 };
 
 console.log(myColorRectangle);
 
-
 // TypeScript Union Types
 // Union types are used when a value can be more than a single type.
 
-const myProperty = (propertys: string | number ) => {
-     console.log(`my property is ${propertys}`)
-}
+const myProperty = (propertys: string | number) => {
+  console.log(`my property is ${propertys}`);
+};
 
 myProperty("Phone");
 myProperty(10);
 
 // TypeScript Functions
 function getTime(): number {
-  return new Date().getTime()
+  return new Date().getTime();
 }
 
-getTime()
+getTime();
 
 // Void Return Type
 // The type void can be used to indicate a function doesn't return any value.
@@ -182,40 +165,93 @@ function printHello(): void {
 }
 printHello();
 
-
 // Parameters
 // Function parameters are typed with a similar syntax as variable declarations.
 
-const multiply = (a:number, b:number) => {
-  console.log(a * b)
+const multiply = (a: number, b: number) => {
+  console.log(a * b);
 };
 
 multiply(10, 2);
 
-
 // Named Parameters
 // Typing named parameters follows the same pattern as typing normal parameters.
 
-function divide({ dividend, divisor }: { dividend: number, divisor: number }) {
+function divide({ dividend, divisor }: { dividend: number; divisor: number }) {
   return dividend / divisor;
 }
-
 
 // Type Alias
 // Function types can be specified separately from functions with type aliases.
 // These types are written similarly to arrow functions, read more about arrow functions here.
 type Nagate = (value: number) => number;
 const nagateFunction: Nagate = (value) => value + 3;
-nagateFunction(1)
-
+nagateFunction(1);
 
 // TypeScript Casting
 // Casting is the process of overriding a type.
-let  x: unknown = 1;
+let x: unknown = 1;
 console.log(x as number);
 
-
 // Casting with <>
-// Using <> works the same as casting with as. 
+// Using <> works the same as casting with as.
 let num1: unknown = 10;
-console.log(<string>num1)
+console.log(<string>num1);
+
+// TypeScript Classes
+class Pesrson {
+  private name;
+  private age;
+  constructor(name: string, age: number) {
+    ((this.name = name), (this.age = age));
+  }
+}
+
+let person1 = new Pesrson("Kwame", 25);
+console.log(person1);
+
+// Readonly
+class Animals {
+  constructor(private readonly name: string) {
+    this.name = name;
+  }
+
+  public getName(): string {
+    return this.name;
+  }
+}
+
+const animal = new Animals("Goat");
+console.log("Animal Name", animal.getName());
+
+// Inheritance: Implements
+interface Shape {
+  getCircum: () => number;
+}
+
+class Triangles implements Shape {
+  public constructor(
+    protected readonly width: number,
+    protected readonly height: number,
+  ) {}
+
+  public getCircum(): number {
+    return this.width * this.height;
+  }
+}
+
+let Tri = new Triangles(20, 10);
+console.log(Tri.getCircum());
+
+
+class Circumfrence extends Triangles {
+  public constructor(width: number, height:number, ){
+     super(width, height)
+  }
+
+  public getData(){
+    return this.width + this.height;
+  }
+}
+
+
