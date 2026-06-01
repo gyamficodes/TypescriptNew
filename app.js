@@ -163,3 +163,21 @@ class Circumfrence extends Triangles {
         return this.width + this.height;
     }
 }
+// Abstract Classes
+class Vehicle {
+    getGeb() {
+        return "Hello World";
+    }
+}
+class Cars extends Vehicle {
+    constructor(sounds) {
+        super();
+        this.sounds = sounds;
+    }
+    makeSound() {
+        return this.sounds;
+    }
+}
+let lexux = new Cars("Puupuu");
+console.log(lexux.makeSound());
+console.log(lexux.getGeb());

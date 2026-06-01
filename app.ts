@@ -255,3 +255,36 @@ class Circumfrence extends Triangles {
 }
 
 
+// Abstract Classes
+  abstract class Vehicle {
+    public abstract makeSound(): string;
+
+    public getGeb(): string {
+      return "Hello World";
+    }
+  }
+
+
+  class Cars extends Vehicle {
+   public constructor(protected readonly sounds: string) {
+    super()
+   }
+
+    public makeSound(): string {
+     return this.sounds
+    }
+  }
+
+let lexux = new Cars("Puupuu");
+console.log(lexux.makeSound());
+console.log(lexux.getGeb())
+
+
+
+
+
+
+
+
+
+
