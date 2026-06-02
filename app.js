@@ -181,3 +181,40 @@ class Cars extends Vehicle {
 let lexux = new Cars("Puupuu");
 console.log(lexux.makeSound());
 console.log(lexux.getGeb());
+class Kids {
+    KidName(name) {
+        return `Kid Name is:${name}`;
+    }
+}
+class Kid1 extends Kids {
+    constructor(cry) {
+        super();
+        this.cry = cry;
+    }
+    KidsCry() {
+        return this.cry;
+    }
+}
+let kid1 = new Kid1("Waa Waa");
+console.log(kid1.KidsCry());
+console.log(kid1.KidName("Kwame"));
+class PhoneMusic {
+    phoneName(name) {
+        return `The phone name is ${name}`;
+    }
+    ;
+}
+;
+class Iphone extends PhoneMusic {
+    constructor(song) {
+        super();
+        this.song = song;
+    }
+    phoneSound() {
+        return this.song;
+    }
+}
+let iphone = new Iphone("ringing ringing");
+console.log(iphone.phoneName("Ihpone 17"));
+console.log(iphone.phoneSound());
+// TypeScript Basic Generics

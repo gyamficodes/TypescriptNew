@@ -243,41 +243,91 @@ class Triangles implements Shape {
 let Tri = new Triangles(20, 10);
 console.log(Tri.getCircum());
 
-
 class Circumfrence extends Triangles {
-  public constructor(width: number, height:number, ){
-     super(width, height)
+  public constructor(width: number, height: number) {
+    super(width, height);
   }
 
-  public getData(){
+  public getData() {
     return this.width + this.height;
   }
 }
 
-
 // Abstract Classes
-  abstract class Vehicle {
-    public abstract makeSound(): string;
+abstract class Vehicle {
+  public abstract makeSound(): string;
 
-    public getGeb(): string {
-      return "Hello World";
-    }
+  public getGeb(): string {
+    return "Hello World";
+  }
+}
+
+class Cars extends Vehicle {
+  public constructor(protected readonly sounds: string) {
+    super();
   }
 
-
-  class Cars extends Vehicle {
-   public constructor(protected readonly sounds: string) {
-    super()
-   }
-
-    public makeSound(): string {
-     return this.sounds
-    }
+  public makeSound(): string {
+    return this.sounds;
   }
+}
 
 let lexux = new Cars("Puupuu");
 console.log(lexux.makeSound());
-console.log(lexux.getGeb())
+console.log(lexux.getGeb());
+
+
+abstract class Kids {
+  abstract KidsCry(): string;
+
+  public KidName(name: string): string {
+    return `Kid Name is:${name}`;
+  }
+}
+
+
+class Kid1 extends Kids {
+   public constructor(protected readonly cry: string) {
+    super();
+   }
+
+  public KidsCry(): string {
+    return this.cry;
+  }
+}
+
+
+let kid1 = new Kid1("Waa Waa");
+console.log(kid1.KidsCry());
+console.log(kid1.KidName("Kwame"));
+
+
+abstract class PhoneMusic {
+     abstract  phoneSound(): string;
+
+     public phoneName(name:string): string {
+           return `The phone name is ${name}`
+     };
+};
+
+
+
+class Iphone extends PhoneMusic {
+  public constructor(protected song:string){
+    super();
+  }
+
+public phoneSound() {
+    return this.song
+  }
+}
+let iphone = new Iphone("ringing ringing");
+
+console.log(iphone.phoneName("Ihpone 17"))
+console.log(iphone.phoneSound())
+
+
+// TypeScript Basic Generics
 
 
 
@@ -286,5 +336,4 @@ console.log(lexux.getGeb())
 
 
 
-
-
+ 
