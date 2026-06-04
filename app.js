@@ -218,3 +218,34 @@ let iphone = new Iphone("ringing ringing");
 console.log(iphone.phoneName("Ihpone 17"));
 console.log(iphone.phoneSound());
 // TypeScript Basic Generics
+// Generics with functions help create more general functions that accurately represent the input and return types.
+function createPage(p1, p2) {
+    return [p1, p2];
+}
+console.log(createPage(30, 20));
+class displayName {
+    constructor(Name) {
+        this.Name = Name;
+    }
+}
+let displayName1 = new displayName("John");
+console.log(displayName1);
+const Phone = {
+    Name: "Iphone",
+    Country: "Germany",
+    version: 14
+};
+console.log(Phone);
+// Default Value
+// Generics can be assigned default values which apply if no other value is specified or inferred.
+class webSite {
+    constructor(value) {
+        this.value = value;
+    }
+    getName() {
+        return this.value;
+    }
+}
+let wdb = new webSite("Hello worlds");
+console.log(wdb.getName());
+// TypeScript Utility Types

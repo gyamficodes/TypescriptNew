@@ -328,12 +328,57 @@ console.log(iphone.phoneSound())
 
 
 // TypeScript Basic Generics
+// Generics with functions help create more general functions that accurately represent the input and return types.
+function  createPage<page1, page2>(p1:page1 , p2:page2): [page1, page2] {
+   return  [p1, p2]
+}
+
+console.log(createPage<number, number>(30, 20));
+
+class displayName<T> {
+  public Name: T | undefined;
+
+  constructor(Name: T | undefined){
+    this.Name = Name;
+  }
+
+}
+
+let displayName1 = new displayName("John")
+console.log(displayName1);
 
 
+// Type Aliases
+// Generics in type aliases allow creating types that are more reusable.
+ type Machies<T,c,v> = {
+  Name:T;
+  Country:c;
+  version:v;
+ }
 
-
-
-
-
-
+const Phone: Machies<string, string, number> = {
+       Name: "Iphone",
+       Country: "Germany",
+       version: 14
+}
+console.log(Phone);
  
+
+// Default Value
+// Generics can be assigned default values which apply if no other value is specified or inferred.
+class webSite<T =  string> {
+  public value: T | undefined
+
+  constructor(value: T){
+    this.value = value;
+  }
+
+  public  getName(): T | undefined {
+    return  this.value
+  }
+}
+
+let wdb = new webSite("Hello worlds");
+console.log(wdb.getName())
+
+// TypeScript Utility Types
