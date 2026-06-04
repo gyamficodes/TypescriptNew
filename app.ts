@@ -276,7 +276,6 @@ let lexux = new Cars("Puupuu");
 console.log(lexux.makeSound());
 console.log(lexux.getGeb());
 
-
 abstract class Kids {
   abstract KidsCry(): string;
 
@@ -285,52 +284,46 @@ abstract class Kids {
   }
 }
 
-
 class Kid1 extends Kids {
-   public constructor(protected readonly cry: string) {
+  public constructor(protected readonly cry: string) {
     super();
-   }
+  }
 
   public KidsCry(): string {
     return this.cry;
   }
 }
 
-
 let kid1 = new Kid1("Waa Waa");
 console.log(kid1.KidsCry());
 console.log(kid1.KidName("Kwame"));
 
-
 abstract class PhoneMusic {
-     abstract  phoneSound(): string;
+  abstract phoneSound(): string;
 
-     public phoneName(name:string): string {
-           return `The phone name is ${name}`
-     };
-};
-
-
+  public phoneName(name: string): string {
+    return `The phone name is ${name}`;
+  }
+}
 
 class Iphone extends PhoneMusic {
-  public constructor(protected song:string){
+  public constructor(protected song: string) {
     super();
   }
 
-public phoneSound() {
-    return this.song
+  public phoneSound() {
+    return this.song;
   }
 }
 let iphone = new Iphone("ringing ringing");
 
-console.log(iphone.phoneName("Ihpone 17"))
-console.log(iphone.phoneSound())
-
+console.log(iphone.phoneName("Ihpone 17"));
+console.log(iphone.phoneSound());
 
 // TypeScript Basic Generics
 // Generics with functions help create more general functions that accurately represent the input and return types.
-function  createPage<page1, page2>(p1:page1 , p2:page2): [page1, page2] {
-   return  [p1, p2]
+function createPage<page1, page2>(p1: page1, p2: page2): [page1, page2] {
+  return [p1, p2];
 }
 
 console.log(createPage<number, number>(30, 20));
@@ -338,47 +331,82 @@ console.log(createPage<number, number>(30, 20));
 class displayName<T> {
   public Name: T | undefined;
 
-  constructor(Name: T | undefined){
+  constructor(Name: T | undefined) {
     this.Name = Name;
   }
-
 }
 
-let displayName1 = new displayName("John")
+let displayName1 = new displayName("John");
 console.log(displayName1);
-
 
 // Type Aliases
 // Generics in type aliases allow creating types that are more reusable.
- type Machies<T,c,v> = {
-  Name:T;
-  Country:c;
-  version:v;
- }
+type Machies<T, c, v> = {
+  Name: T;
+  Country: c;
+  version: v;
+};
 
 const Phone: Machies<string, string, number> = {
-       Name: "Iphone",
-       Country: "Germany",
-       version: 14
-}
+  Name: "Iphone",
+  Country: "Germany",
+  version: 14,
+};
 console.log(Phone);
- 
 
 // Default Value
 // Generics can be assigned default values which apply if no other value is specified or inferred.
-class webSite<T =  string> {
-  public value: T | undefined
+class webSite<T = string> {
+  public value: T | undefined;
 
-  constructor(value: T){
+  constructor(value: T) {
     this.value = value;
   }
 
-  public  getName(): T | undefined {
-    return  this.value
+  public getName(): T | undefined {
+    return this.value;
   }
 }
 
 let wdb = new webSite("Hello worlds");
-console.log(wdb.getName())
+console.log(wdb.getName());
 
 // TypeScript Utility Types
+// TypeScript comes with a large number of types that can help with some common type manipulation, usually referred to as utility types.
+// This chapter covers the most popular utility types.
+
+// Partial
+interface Data {
+  name: string;
+  expire: number;
+}
+
+let cocacol: Partial<Data> = {
+  name: "Fanta",
+  expire: 2026,
+};
+
+console.log(cocacol);
+
+// Required
+// Required changes all the properties in an object to be required.
+// parakeet.ai
+interface Devices {
+  Make: string;
+  Model: string;
+  Year?: number;
+}
+
+let myCar: Required<Devices> = {
+  Make: "Lexu",
+  Model: "Germany",
+  Year: 2026,
+};
+
+console.log(myCar);
+
+
+
+
+
+

@@ -202,9 +202,7 @@ class PhoneMusic {
     phoneName(name) {
         return `The phone name is ${name}`;
     }
-    ;
 }
-;
 class Iphone extends PhoneMusic {
     constructor(song) {
         super();
@@ -233,7 +231,7 @@ console.log(displayName1);
 const Phone = {
     Name: "Iphone",
     Country: "Germany",
-    version: 14
+    version: 14,
 };
 console.log(Phone);
 // Default Value
@@ -248,4 +246,14 @@ class webSite {
 }
 let wdb = new webSite("Hello worlds");
 console.log(wdb.getName());
-// TypeScript Utility Types
+let cocacol = {
+    name: "Fanta",
+    expire: 2026,
+};
+console.log(cocacol);
+let myCar = {
+    Make: "Lexu",
+    Model: "Germany",
+    Year: 2026,
+};
+console.log(myCar);
