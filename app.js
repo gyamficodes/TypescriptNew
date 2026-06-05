@@ -257,3 +257,19 @@ let myCar = {
     Year: 2026,
 };
 console.log(myCar);
+// Record
+// Record is a shortcut to defining an object type with a specific key type and value type.
+const remote = {
+    "Tv": true,
+    "Bob": false
+};
+console.log(remote);
+let Peraon2 = {
+    name: "John Gyamfi",
+    age: 30
+};
+console.log(Peraon2);
+const bob = {
+    name: "Kwame"
+};
+// TypeScript Keyof

@@ -406,7 +406,38 @@ let myCar: Required<Devices> = {
 console.log(myCar);
 
 
+// Record
+// Record is a shortcut to defining an object type with a specific key type and value type.
+const remote: Record<string, boolean> = {
+   "Tv": true,
+   "Bob": false
+}
+
+console.log(remote);
 
 
+// Omit
+// Omit removes keys from an object type.
+
+interface Persons {
+  name: string;
+  age: number;
+  location?: string;
+}
+
+
+let Peraon2: Omit<Persons, "location"> = {
+  name: "John Gyamfi",
+  age: 30
+}
+console.log(Peraon2);
+
+
+const bob: Pick<Persons, "name"> = {
+  name: "Kwame"
+}
+
+
+// TypeScript Keyof
 
 
