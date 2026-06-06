@@ -1,6 +1,7 @@
 "use strict";
 // JavaScript and TypeScript Primitives
 //boolean, number, string, null, undefined, symbol, bigint
+strictNullChecks: true;
 let isActive = true;
 let age = 30;
 let names = "John Doe";
@@ -272,4 +273,4 @@ console.log(Peraon2);
 const bob = {
     name: "Kwame"
 };
-// TypeScript Keyof
+// TypeScript Null & Undefined

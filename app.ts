@@ -1,5 +1,7 @@
 // JavaScript and TypeScript Primitives
 //boolean, number, string, null, undefined, symbol, bigint
+strictNullChecks: true;
+
 
 let isActive: boolean = true;
 let age: number = 30;
@@ -438,6 +440,6 @@ const bob: Pick<Persons, "name"> = {
 }
 
 
-// TypeScript Keyof
+// TypeScript Null & Undefined
 
 
