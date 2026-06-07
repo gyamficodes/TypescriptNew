@@ -442,4 +442,51 @@ const bob: Pick<Persons, "name"> = {
 
 // TypeScript Null & Undefined
 
+type color = "red" | "blue" | "green";
+type Hexcolor<T extends color> = `#${string}`;
+
+
+let myColor: Hexcolor<"blue"> = "#0000FF";
+
+// TypeScript Type Guards
+// Use typeof checks to narrow primitive unions inside conditional branches.
+
+const formatValue = (value: string | number) => {
+    if(typeof value == "string"){
+        return value.trim().toUpperCase();
+    }else {
+      return value.toFixed(2);
+    }
+}
+const result1 = formatValue("Thank God")
+const result2 = formatValue(100.1)
+console.log(result1, result2 );
+
+// instanceof Type Guards
+// The instanceof operator checks if an object is an instance of a specific class or constructor function.
+class Bird {
+  fly(){
+   console.log("Flying...")
+  }
+}
+
+class Fish {
+   swim() {
+    console.log("Swimming...")
+   }
+}
+
+
+
+const animalMove = () => {
+   if(animal instanceof Bird) {
+    animal.fly();
+   }
+   if(animal instanceof Fish){
+    animal.swim();
+   }
+}
+
+
+
 
