@@ -478,15 +478,13 @@ class Fish {
 
 
 
-const animalMove = () => {
+const animalMove = () => { 
    if(animal instanceof Bird) {
     animal.fly();
    }
    if(animal instanceof Fish){
     animal.swim();
    }
-}
 
 
-
-
+  }
