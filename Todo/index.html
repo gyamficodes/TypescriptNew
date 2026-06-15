@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="todo-card" aria-labelledby="todo-heading">
+      <header class="todo-header">
+        <h1 id="todo-heading">To‑Do</h1>
+        <p class="subtitle">Focus on what matters — simple, fast, and beautiful.</p>
+      </header>
+
+      <div class="input-row">
+        <input id="task" type="text" placeholder="What do you want to do?" aria-label="New task" />
+        <button id="add-btn" onclick="addTask()" class="btn primary">Add</button>
+      </div>
+
+      <ul id="list" class="todo-list" aria-live="polite"></ul>
+
+      <div class="card-actions">
+        <button id="clear-completed" type="button" class="btn">Clear Completed</button>
+        <button id="clear-all" type="button" class="btn danger">Clear All</button>
+      </div>
+    </section>
+  </main>
+
+
+    <script type="text/javascript" src="todo.js"></script>
+</body>
+</html>
