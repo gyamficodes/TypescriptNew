@@ -59,6 +59,54 @@ body{
 .btn:active{transform:translateY(1px)}
 
 .todo-list{list-style:none;padding:0;margin:18px 0 0;max-height:40vh;overflow:auto}
+.todo-list li{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:16px 18px;
+	margin-bottom:12px;
+	border-radius:16px;
+	background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(249,250,251,0.95));
+	border:1px solid rgba(15,23,42,0.08);
+	box-shadow:0 10px 20px rgba(15,23,42,0.04);
+	transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.todo-list li:hover{
+	transform:translateY(-2px);
+	box-shadow:0 14px 28px rgba(15,23,42,0.08);
+	border-color:rgba(99,102,241,0.16);
+}
+.todo-list li button{
+	padding:8px 12px;
+	border-radius:999px;
+	border:none;
+	background:rgba(99,102,241,0.12);
+	color:var(--accent);
+	font-weight:700;
+	cursor:pointer;
+	transition:background .15s ease, color .15s ease, transform .15s ease;
+}
+.todo-list li button:hover{
+	background:var(--accent);
+	color:#fff;
+	transform:translateY(-1px);
+}
+.todo-list li::before{
+	content: "";
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	background:linear-gradient(135deg, var(--accent), #8b5cf6);
+	margin-right:14px;
+	flex-shrink:0;
+}
+.todo-list li span{
+	flex:1;
+	margin-right:14px;
+}
+.todo-list li strong{
+	font-weight:700;
+}
 .todo-item{
 	display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:10px;margin-bottom:8px;border:1px solid rgba(15,23,42,0.03);
 	transition:transform .12s, box-shadow .12s;
@@ -74,6 +122,30 @@ body{
 .todo-item.completed .label{text-decoration:line-through;color:var(--muted);opacity:0.8}
 
 .card-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+
+/* New styles for enhanced list items */
+.todo-item{
+	background: linear-gradient(180deg, rgba(99,102,241,0.03), rgba(139,92,246,0.02));
+	border: 1px solid rgba(99,102,241,0.08);
+	padding:12px 14px;
+	align-items:center;
+	animation: popIn .18s ease;
+}
+
+.check{display:inline-flex;align-items:center;justify-content:center}
+.check input{display:none}
+.check .checkmark{width:20px;height:20px;border-radius:6px;background:#fff;border:1px solid rgba(15,23,42,0.06);display:inline-block;position:relative}
+.check input:checked + .checkmark{background:linear-gradient(90deg,var(--accent), #8b5cf6);border-color:transparent}
+.check .checkmark::after{content:'';position:absolute;left:5px;top:2px;width:6px;height:10px;border:2px solid white;border-width:0 2px 2px 0;transform:rotate(45deg);opacity:0}
+.check input:checked + .checkmark::after{opacity:1}
+
+.text{display:flex;flex-direction:column}
+.text .label{font-weight:600}
+.text .meta{font-size:0.8rem;color:var(--muted);margin-top:4px}
+
+.todo-item .actions .btn{background:transparent;border:1px solid rgba(15,23,42,0.04);padding:6px 10px}
+
+@keyframes popIn{from{opacity:0;transform:translateY(6px) scale(.995)}to{opacity:1;transform:none}}
 
 /* small screens */
 @media (max-width:520px){

@@ -1,6 +1,5 @@
 let task: (string)[] = [];
 
-let btn = document.getElementById("add-btn") as HTMLElement | null;
 
 
 function displayTask() {
@@ -26,13 +25,17 @@ const addTask = () => {
         displayTask();
         taskInput.value = "";
     }
+};
 
-}
 
+const btn = document.getElementById("add-btn") as HTMLElement | null;
 
 btn?.addEventListener("click", addTask);
 
-
+const deleteTask = (index: number) => {
+    task.splice(index, 1);
+    displayTask();
+};
 
 
 
