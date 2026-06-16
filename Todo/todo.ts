@@ -1,7 +1,8 @@
-let task: (string)[] = [];
 
+// Define an array to hold tasks
+let task: string[] = [];
 
-
+// Generate HTML for each task
 function displayTask() {
     let html: string = "";
 
@@ -14,6 +15,7 @@ function displayTask() {
     }
 }
 
+// Function to add a task
 const addTask = () => {
     let taskInput = document.getElementById("task") as HTMLInputElement | null;
     if (!taskInput) {
@@ -27,16 +29,16 @@ const addTask = () => {
     }
 };
 
-
-const btn = document.getElementById("add-btn") as HTMLElement | null;
-
-btn?.addEventListener("click", addTask);
-
+// Function to delete a task
 const deleteTask = (index: number) => {
     task.splice(index, 1);
     displayTask();
 };
 
-
-
-
+const btn = document.getElementById("add-btn") as HTMLElement | null;
+const clearBtn = document.getElementById("clear-all") as HTMLElement | null;
+clearBtn?.addEventListener("click", () => {
+    task = [];
+    displayTask();
+});
+btn?.addEventListener("click", addTask);
